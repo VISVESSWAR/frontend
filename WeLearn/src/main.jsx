@@ -6,7 +6,7 @@ import { CourseContextProvider } from "./context/CourseContext.jsx";
 import { CartContextProvider } from "./context/CartContext.jsx";
 import "./index.css"; 
 
-export const server = "http://localhost:3001";
+export const server = "https://elearning-backend-yhjb.onrender.com";
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <UserContextProvider>
