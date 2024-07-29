@@ -5,7 +5,7 @@ import { server } from "../../main";
 import { UserData } from "../../context/UserContext";
 
 const SuccessPage = () => {
-  const { setUser } = UserData();
+  const { user,setUser } = UserData();
   const location = useLocation();
   const [payment, setPayment] = useState(null);
   const [error, setError] = useState(null);
