@@ -21,7 +21,12 @@ const CourseStudy = ({ user }) => {
       {course && (
         <div className="container mx-auto px-4 py-8">
           <div className="bg-white shadow-lg rounded-lg p-6 mb-8">
-            <img src={`${server}/${course.image}`} alt={course.title} className="w-full h-64 object-cover rounded-lg mb-6" />
+            <img 
+              src={`${server}/${course.image}`} 
+              alt={course.title} 
+              className="w-full h-auto object-cover rounded-lg mb-6"
+              style={{ maxWidth: '100%', height: 'auto', display: 'block' }}
+            />
             <h2 className="text-3xl font-bold text-gray-800 mb-4">{course.title}</h2>
             <p className="text-gray-600 mb-4">{course.description}</p>
             <p className="text-gray-700 mb-4">By: <span className="font-semibold">{course.createdBy}</span></p>
