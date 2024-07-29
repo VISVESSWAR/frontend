@@ -30,20 +30,48 @@ const AdminUsers = ({ user }) => {
   }
 
   async function updateRole(id) {
+    const tok = localStorage.getItem("token");
+    console.log(tok);
     if (confirm("Are you sure you want to update this user's role?")) {
       try {
-        const { data } = await axios.put(`${server}/api/user/${id}`, null, {
-          headers: {
-            Authorization: `Bearer ${localStorage.getItem("token")}`,
-          },
-        });
+        console.log(id);
+        const { data } = await axios.put(
+          `${server}/api/user/${id}`,
+          {},
+          {
+            headers: {
+              token: localStorage.getItem("token"),
+            },
+          }
+        );
         toast.success(data.message);
         fetchUsers();
       } catch (error) {
-        toast.error(error.response.data.message);
+        toast.error(error.response.data.message, "token", tok);
+        console.log(error);
       }
     }
   }
+  // const updateRole = async (id) => {
+  //   if (confirm("are you sure you want to update this user role")) {
+  //     try {
+  //       const { data } = await axios.put(
+  //         `${server}/api/user/${id}`,
+  //         {},
+  //         {
+  //           headers: {
+  //             token: localStorage.getItem("token"),
+  //           },
+  //         }
+  //       );
+
+  //       toast.success(data.message);
+  //       fetchUsers();
+  //     } catch (error) {
+  //       toast.error(error.response.data.message);
+  //     }
+  //   }
+  // };
 
   return (
     <div className="container mx-auto px-4 py-8">
