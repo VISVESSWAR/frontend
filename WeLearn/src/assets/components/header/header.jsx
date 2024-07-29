@@ -5,10 +5,10 @@ const Header = ({ isAuth }) => {
   return (
     <header className="bg-blue-600 text-white py-4">
       <div className="container mx-auto flex justify-between items-center">
-        <div className="text-2xl font-bold">
+        <div className="text-2xl font-bold mx-5">
           <Link to={"/"}>lookSkill</Link>
         </div>
-        <nav className="flex space-x-4">
+        <nav className="flex space-x-4 px-7">
           <Link to="/" className="hover:text-gray-300">
             Home
           </Link>
