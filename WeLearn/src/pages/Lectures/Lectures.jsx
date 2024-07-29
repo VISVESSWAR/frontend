@@ -86,13 +86,16 @@ const Lectures = ({ user }) => {
   };
 
   async function fetchLectures() {
+    console.log("Entered");
     try {
       const { data } = await axios.get(`${server}/api/lectures/${params.id}`, {
         headers: {
           token: localStorage.getItem("token"),
         },
       });
+      console.log(data);
       setLectures(data.lectures);
+      console.log(lectures);
       setLoading(false);
     } catch (error) {
       setLoading(false);
@@ -147,7 +150,9 @@ const Lectures = ({ user }) => {
                       <p className="text-gray-700">{lecture.description}</p>
                     </>
                   ) : (
-                    <h1 className="text-2xl font-bold">Please select a lecture</h1>
+                    <h1 className="text-2xl font-bold">
+                      Please select a lecture
+                    </h1>
                   )}
                 </div>
               )}
@@ -167,7 +172,10 @@ const Lectures = ({ user }) => {
                   <h2 className="text-xl font-bold mb-4">Add Lecture</h2>
                   <form onSubmit={submitHandler} className="space-y-4">
                     <div>
-                      <label htmlFor="title" className="block text-sm font-medium text-gray-700">
+                      <label
+                        htmlFor="title"
+                        className="block text-sm font-medium text-gray-700"
+                      >
                         Title
                       </label>
                       <input
@@ -179,7 +187,10 @@ const Lectures = ({ user }) => {
                       />
                     </div>
                     <div>
-                      <label htmlFor="description" className="block text-sm font-medium text-gray-700">
+                      <label
+                        htmlFor="description"
+                        className="block text-sm font-medium text-gray-700"
+                      >
                         Description
                       </label>
                       <input
@@ -191,7 +202,10 @@ const Lectures = ({ user }) => {
                       />
                     </div>
                     <div>
-                      <label htmlFor="video" className="block text-sm font-medium text-gray-700">
+                      <label
+                        htmlFor="video"
+                        className="block text-sm font-medium text-gray-700"
+                      >
                         Video
                       </label>
                       <input
@@ -203,7 +217,12 @@ const Lectures = ({ user }) => {
                     </div>
                     {videoPreview && (
                       <div className="mt-4">
-                        <video src={videoPreview} controls width={300} className="rounded"></video>
+                        <video
+                          src={videoPreview}
+                          controls
+                          width={300}
+                          className="rounded"
+                        ></video>
                       </div>
                     )}
                     <button
@@ -218,8 +237,14 @@ const Lectures = ({ user }) => {
               <div className="space-y-2">
                 {lectures && lectures.length > 0 ? (
                   lectures.map((lec, i) => (
-                    <div key={lec._id} className="flex items-center justify-between bg-gray-100 p-2 rounded shadow-md">
-                      <div onClick={() => fetchLecture(lec._id)} className="cursor-pointer">
+                    <div
+                      key={lec._id}
+                      className="flex items-center justify-between bg-gray-100 p-2 rounded shadow-md"
+                    >
+                      <div
+                        onClick={() => fetchLecture(lec._id)}
+                        className="cursor-pointer"
+                      >
                         {i + 1}. {lec.title}
                       </div>
                       {user && user.role === "admin" && (

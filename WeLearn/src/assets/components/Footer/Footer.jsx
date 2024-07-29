@@ -1,4 +1,4 @@
-import { FaLinkedin, FaSquareInstagram, FaTwitter } from "react-icons/fa6";
+import { FaGithubAlt, FaLinkedin, FaSquareInstagram, FaTwitter } from "react-icons/fa6";
 
 const Footer = () => {
   return (
@@ -12,13 +12,13 @@ const Footer = () => {
             <FaLinkedin />
             <span>LinkedIn</span>
           </a>
-          <a href="https://www.instagram.com/" className="hover:text-gray-300 flex items-center space-x-2">
+          <a href="https://www.instagram.com/vish2_/" className="hover:text-gray-300 flex items-center space-x-2">
             <FaSquareInstagram />
             <span>Instagram</span>
           </a>
-          <a href="https://twitter.com/" className="hover:text-gray-300 flex items-center space-x-2">
-            <FaTwitter />
-            <span>Twitter</span>
+          <a href="https://github.com/VISVESSWAR" className="hover:text-gray-300 flex items-center space-x-2">
+            <FaGithubAlt />
+            <span>Github</span>
           </a>
         </div>
       </div>
