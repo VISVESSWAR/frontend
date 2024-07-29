@@ -56,7 +56,7 @@ const SuccessPage = () => {
           <p className="text-lg text-gray-700 mb-4">Thank you for your purchase!</p>
           <p className="text-md text-gray-600 mb-2">Session ID: {payment.paymentId}</p>
           <p className="text-md text-gray-600 mb-4">Payment Status: {payment.paymentStatus}</p>
-          <Link to={`${user._id}/dashboard`} className="text-blue-500 hover:underline">Go to Dashboard</Link>
+          <Link to={`/${user._id}/dashboard`} className="text-blue-500 hover:underline">Go to Dashboard</Link>
         </div>
       )}
     </div>
