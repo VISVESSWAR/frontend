@@ -1,4 +1,4 @@
-import { FaGithubAlt, FaLinkedin, FaSquareInstagram, FaTwitter } from "react-icons/fa6";
+import { FaGithubAlt, FaLinkedin, FaSquareInstagram } from "react-icons/fa6";
 
 const Footer = () => {
   return (
